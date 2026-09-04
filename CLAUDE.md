@@ -22,7 +22,7 @@ The system does two things that are really **two phases of one event**:
 
 > **One-sentence pitch:** *During the February 2025 island-wide blackout, a rural clinic running this system would not have gone dark for six hours — it would have islanded automatically and kept the vaccine fridge running the whole time.*
 
-### 1.1 What we are **NOT** (say this before a judge does)
+### 1.1 What we are **NOT** 
 
 - We did **not** invent self-healing grids. FLISR (Schneider, S&C, Survalent, G&W, SEL) is a decade-old commercial category. Detect → isolate → restore is solved at utility scale.
 - We did **not** invent agentic grid control. Grid-Agent (arXiv:2508.05702), X-GridAgent, GridMind and others established the Monitor → Planner → Validator pattern in 2025.
