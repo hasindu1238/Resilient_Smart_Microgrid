@@ -24,7 +24,7 @@ On **9 February 2025, Sri Lanka suffered an island-wide blackout** lasting rough
 
 > *"Over 50% of national electricity demand was met by 800 MW of solar photovoltaic (PV) generation … Due to the high penetration of non-synchronous solar PV generation, the grid had a low system inertia, making it vulnerable to faults."* — CEB, on the "Sunny Sunday" cascading failure.
 
-And here is the slide that wins the room — **the CEB's own remediation list**:
+**the CEB's own remediation list**:
 
 > *"Deploying grid-forming inverters with BESS to provide synthetic inertia and frequency stabilization"* and *"Advancing Smart Grid investments to improve real-time monitoring and control of renewable energy integration."*
 
