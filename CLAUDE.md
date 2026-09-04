@@ -89,6 +89,9 @@ This gives us the XAI transparency judges love **and** the anti-hallucination gu
 
 Deterministic guarantee: Planner → Validator → Control exchange only enumerated whitelist commands ([`spec.md` §6.1](./spec.md)). No generative-model output reaches an actuator.
 
+### 2.2 Runtime sequencing guidance
+Implement the operational loop in the order defined by [`spec.md` §6.4](./spec.md): package canonical signed telemetry, authenticate and integrity-check it at the gateway, let Monitor produce state, let Planner propose a bounded plan, let Validator issue the signed token, and let Control actuate locally. Feed the resulting state back into telemetry; run XAI only after the decision is logged and keep it read-only. The dashboard, watchdog, and immutable audit trail observe the same loop, while manual override takes precedence over autonomous control as defined in [`spec.md` §7.6](./spec.md).
+
 ---
 
 ## 3. Development Environment & Commands

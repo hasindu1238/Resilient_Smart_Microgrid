@@ -157,6 +157,18 @@ The Control agent ignores any command not in this finite set. Commands to modify
 ### 6.3 Deterministic command path (our anti-hallucination guarantee)
 No generative model sits between detection and actuation. The **Planner** selects from the whitelist using bounded logic (thresholds + priority + battery-vs-solar forecast); the **Validator** authorises with a signed token after RBAC + safety-bound + `NEVER_SHED` checks; the **Control** agent executes only tokened, whitelisted commands. There is no free-text-to-command step, so a hallucinated or injected command **cannot execute**. The **XAI agent** explains the result afterwards and is *outside* this path ([`CLAUDE.md` §2.1](./CLAUDE.md)).
 
+### 6.4 End-to-End Operational Workflow
+The runtime is a local-first, closed-loop sequence connecting the requirements above:
+
+1. **Telemetry generation and JSON packaging.** Simulated edge nodes sample grid, solar, battery, load, and cold-chain signals at the rates in §4.3, apply the send-on-delta rule in §4.4, and package each reading using the canonical schema in §4.1, including monotonic `seq` and HMAC `sig`.
+2. **Authenticated telemetry ingestion.** The gateway accepts device telemetry over the local API only after the signed JWT handshake in §7.1. It verifies schema, bounds, `seq`, and `sig`; replayed or tampered payloads follow the integrity and quarantine controls in §§7.4–7.5.
+3. **Monitor Agent.** The Monitor consumes accepted readings, applies the action thresholds in §4.2, and detects grid loss or instability, battery stress, cold-chain alarms, and other bounded anomalies. It emits state for planning but cannot actuate.
+4. **Planner Agent and energy triage.** The Planner combines the Monitor state with battery-versus-solar forecasting and the 4-tier hierarchy in §6.2 to select a bounded response from §6.1. It proposes islanding, reconnection, shedding, restoration, delay, or bounded battery support as appropriate; it does not execute commands.
+5. **Security Validator Agent.** The Validator checks identity, RBAC, safety bounds, the immutable whitelist, watchdog criteria, and `NEVER_SHED`. It rejects unsafe plans and issues a signed token only for an approved plan.
+6. **Closed-loop local actuation.** Control executes only the tokened whitelist command. The gateway and local actuators then feed their resulting state back into telemetry, keeping the loop operational without cloud or backhaul connectivity.
+7. **XAI explanation generation.** After the decision is logged and acted on, the read-only XAI agent converts the finalized state and action into an operator-facing explanation using a local model or deterministic template; it never generates commands.
+8. **Human-in-the-loop monitoring and audit logging.** The local dashboard shows telemetry, agent state, load priorities, actions, and the XAI rationale. Watchdog, alarm, confirmation, manual override, and safe-state behavior follow §7.6, while every telemetry value, proposal, validation result, token, action, and rationale is recorded in the immutable audit log.
+
 ---
 
 ## 7. Constraints — Cybersecurity Guardrails & Zero-Trust
