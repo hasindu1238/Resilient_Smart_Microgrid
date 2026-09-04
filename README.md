@@ -55,7 +55,7 @@ We do **not** claim to have invented self-healing grids (**FLISR** — Schneider
 | Backup duration | n/a | n/a | minutes | **hours–days** |
 | Target scale / cost | utility / high | utility / high | building / low | **clinic / low** |
 
-The claims we defend in Q&A live in [`spec.md` §2](./spec.md). If a judge cites Grid-Agent: agree warmly, then point to *"works during a blackout, and protects a specific critical asset."* If a judge says *"isn't this just a transfer switch?"*: a UPS gives minutes and an ATS flips everything blindly — ours **forecasts** depletion, **sheds by priority**, **explains**, and **defends itself.**
+The claims we defend in Q&A live in [`spec.md` §2](./spec.md). If a judge cites Grid-Agent: agree warmly, then point to *"works during a blackout, and protects a specific critical asset."* For example, someone may think *"isn't this just a transfer switch?"*: a UPS gives minutes and an ATS flips everything blindly — ours **forecasts** depletion, **sheds by priority**, **explains**, and **defends itself.**
 
 ---
 
