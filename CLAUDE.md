@@ -1,15 +1,5 @@
 # CLAUDE.md — System Scope & Multi-Agent Orchestration
 
-**Project:** Resilient Smart Microgrid — *The Village Micro-grid Brain*
-**Subtitle:** A Secure, Self-Healing & Explainable AI Energy OS for Rural Health Centers
-**Primary track:** **SDG 3 — Good Health & Well-being** (uninterrupted power for the medical cold chain)
-**Secondary:** SDG 11 (resilient communities) · SDG 13 (climate action — maximised solar self-use, less diesel)
-**Event:** IEEE CS R10 Summer School 2026 — Mini Ideathon (theme: AI · IoT · Cybersecurity)
-**Status:** Concept blueprint + working simulated prototype for a 3-day ideathon. Not a deployment.
-**Repo:** this is the *system scope + agent roles* deliverable. See also [`spec.md`](./spec.md) (inputs / outputs / constraints) and [`README.md`](./README.md) (how to run / understand).
-
----
-
 ## 1. System Scope & Positioning
 
 An **edge-first, cyber-secure controller for a single rural health-center microgrid** that keeps the clinic's critical medical loads energised through grid failures and does so *autonomously, locally, and explainably*. The control loop **closes on an on-site gateway and keeps working when cloud connectivity is completely severed** — because in rural Sri Lanka a grid outage usually takes the internet with it.
