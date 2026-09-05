@@ -1,10 +1,6 @@
 # Resilient Smart Microgrid — *The Village Micro-grid Brain*
 
-### A Secure, Self-Healing & Explainable AI Energy OS for Rural Health Centers
-
-**IEEE CS R10 Summer School 2026 — Mini Ideathon**
-**Primary track:** SDG 3 — Good Health & Well-being · **Secondary:** SDG 11, SDG 13
-**Theme fit:** AI · IoT · Cybersecurity
+### A Secure, Self-Healing & Explainable AI Energy OS for Rural Health Center
 
 > A local controller that keeps a rural clinic's **vaccine fridge alive** through a blackout — islanding onto solar + battery, intelligently shedding non-essential loads, explaining every decision to the nurse in plain language, and defending itself from cyber-tampering. **On-site, in real time, with no cloud and no internet** — because a rural blackout usually takes the network down too.
 
