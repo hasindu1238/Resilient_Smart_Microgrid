@@ -1,12 +1,5 @@
 # spec.md — Inputs, Outputs & Constraints
 
-**Project:** Resilient Smart Microgrid — *The Village Micro-grid Brain*
-**Primary track:** SDG 3 — Good Health & Well-being · **Secondary:** SDG 11, SDG 13
-**Status:** Concept blueprint + simulated prototype for a 3-day ideathon. Not a deployment.
-**Repo:** this is the *inputs / outputs / constraints* deliverable. See also [`CLAUDE.md`](./CLAUDE.md) (scope + agent roles) and [`README.md`](./README.md) (how to run).
-
----
-
 ## 1. Problem → Case Study (grounded, not invented)
 
 ### 1.1 The problem
